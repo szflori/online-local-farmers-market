@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ✨ Local Farmers' Market Online Platform ✨
 
 ## **Project Description**
@@ -63,6 +62,3 @@ The frontend will be available at **http://localhost:4200**.
 
 ## **Development**
 This project uses **Nx workspace** to manage both frontend and backend applications in a monorepo.
-=======
-Init
->>>>>>> 34139e5 (Create Readme.md)

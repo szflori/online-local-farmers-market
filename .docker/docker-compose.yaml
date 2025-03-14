@@ -5,9 +5,3 @@ services:
       - '27017:27017'
     volumes:
       - '../.temp/mongodb:/data/db'
-    networks:
-      - olfm-dev
-
-networks:
-  olfm-dev:
-    external: true

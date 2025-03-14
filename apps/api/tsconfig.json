@@ -9,6 +9,5 @@
   ],
   "compilerOptions": {
     "esModuleInterop": true,
-    "typeRoots": ["./types", "./node_modules/@types"]
   }
 }

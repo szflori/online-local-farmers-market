@@ -11,7 +11,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
 import passport from './configs/passport';
-import { configureRoutes } from './routes/routes';
+import { authRoutes, ordersRoutes, productsRoutes } from './routes/routes';
 
 dotenv.config(); // TODO CHECK hogy szükséges-e?
 
@@ -35,7 +35,14 @@ app.use(passport.session());
 const port = process.env.PORT || 3333;
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
-app.use('/', configureRoutes(express.Router()));
+
+app.use('/api/auth/', authRoutes(express.Router()));
+app.use('/api/products/', productsRoutes(express.Router()));
+app.use('/api/orders/', ordersRoutes(express.Router()));
+
+app.get("/", (_req, res) => {
+  res.send("API is running 🚀");
+});
 
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
